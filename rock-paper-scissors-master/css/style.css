@@ -1,0 +1,270 @@
+:root{
+    --Scissors_Gradient: linear-gradient(hsl(39, 89%, 49%) to hsl(40, 84%, 53%));
+    --Paper_Gradient: hsl(230, 89%, 62%) to hsl(230, 89%, 65%);
+    --Rock_Gradient: #dc2e4e to #dd405d;
+    --Lizard_Gradient: hsl(261, 73%, 60%) to hsl(261, 72%, 63%);
+    --Cyan: hsl(189, 59%, 53%) to hsl(189, 58%, 57%);
+    --Dark_Text: hsl(229, 25%, 31%);
+    --Score_Text: hsl(229, 64%, 46%);
+    --Header_Outline: hsl(217, 16%, 4);
+    --Radial_Gradient: #1f3757 to #141539;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+section{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background: rgb(31,55,87);
+    background: linear-gradient(180deg, rgba(31,55,87,1) 0%, rgba(20,21,57,1) 69%);
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+.container{
+    width: 50rem;
+    height: 50rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.textContainer{
+    width: 40rem;
+    height: 7.5rem;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    border: 4px solid var(--Dark_Text);
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+.textContainer span{
+    width: 80px;
+    font-size: 2.4rem;
+    color: #f7f7f7;
+    margin: auto 0;
+    line-height: 34px;
+}
+
+.score{
+    width: 9.5rem;
+    height: 7.25rem;
+    background-color: #f7f7f7;
+    box-shadow:  0 0 1em rgba(0, 0, 0, 0.219);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.score span{
+    color: hsl(229, 64%, 46%);
+    font-size: 1.1rem;
+    margin: auto;
+    width: min-content;
+}
+
+.score p{
+    font-size: 4.5rem;
+    text-align: center;
+    color: var(--Dark_Text);
+}
+
+.game{
+    width: 30rem;
+    height: 35rem;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    background-image: url('../images/bg-triangle.svg');
+    background-repeat: no-repeat;
+    background-position: center 55px;
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    background-color: #f7f7f7;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: inset 0 8px 0 0 rgba(0, 0, 0, 0.274);
+    justify-self: center;
+}
+
+.box svg{
+   margin: auto; 
+}
+
+/* rock */
+
+
+/* conseguir fazer a borda com o detalhe 
+.rock::before{
+    content: '';
+    display: block;
+    width: 155px;
+    height: 155px;
+    border-radius: 50%;
+    background-color: #c40125;;
+    position: absolute;
+    transform: translateY(-28px);
+    box-shadow: inset 0 -8px 0 0 rgba(0, 0, 0, 0.274);
+    z-index: -1;  
+}
+
+*/
+
+.rock{
+    border: 20px solid #c40125;
+    transform: translateX(30px);    
+}
+
+.paper{
+    border: 20px solid blue;
+    transform: translateX(30px);    
+}
+
+.scissors{
+    border: 20px solid grey;
+    transform: translateY(200px);
+}
+
+.resultDiv{
+    width: 50rem;
+    height: 600px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.resultDiv span{
+    margin: 0 auto;
+    color: #f7f7f7;
+}
+
+.resultDiv_myPick, .resultDiv_botPick{
+    width: 200px;
+    height: 500px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    cursor: pointer;
+    margin: auto 0;
+}
+
+.resultDiv_result{
+    width: 200px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto 0;
+    font-size: 2rem;
+}
+
+.resultDiv button{
+    width: max-content;
+    border: none;
+    padding: 10px 70px;
+    background-color: #f7f7f7;
+    color: #131313;
+    border-radius: 10px;
+    box-shadow: 0 0 1em black;
+    cursor: pointer;
+}
+
+.picked{
+    width: 200px;
+    height: 200px;
+    display: flex;
+}
+
+.picked div{
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+    background-color: #f7f7f7;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    transform: translateX(0) scale(2);
+}
+
+
+/* rules */
+
+.rules {
+    width: max-content;
+    height: min-content;
+    padding: 1rem 3rem;
+    border: 4px solid var(--Dark_Text);
+    border-radius: 10px;
+    font-size: 1.15rem;
+    color: #f7f7f7;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.rulesDiv{
+    width: 100vw;
+    height: 100vh;
+    background-color: #1515159c;
+    display: flex;
+    position: absolute;
+}
+
+.rulesDivC{
+    width: max-content;
+    height: max-content;
+    background-color: #f7f7f7;
+    border-radius: 20px;
+    padding: 20px;
+    margin: auto;
+}
+
+.rulesDivC img{
+    margin-top: 30px;
+}
+
+.rulesText{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3rem;
+    color: var(--Dark_Text);
+}
+
+.rulesText span{
+    margin-top: auto;
+}
+
+.rulesText img{
+    cursor: pointer;
+}
+
+
+
+/* ani */
