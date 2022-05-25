@@ -20,9 +20,6 @@ botGame = () => {
     valorBotDiv = arrayGame[Math.floor(Math.random() * 3)]
 
     valorBot = valorBotDiv.className
-
-    console.log(valorBot)
-
     return 
 }
 
@@ -49,7 +46,6 @@ result = () => {
         score -= 1
 
     }
-
     return
     
 }
@@ -63,7 +59,7 @@ r = () => {
     resultDiv.innerHTML = `
     <div class="resultDiv_myPick">
 
-        <span>YOU PICKED</span>
+        <p>YOU PICKED</p>
         <div class="picked">
 
             ${valorDiv.outerHTML}
@@ -72,14 +68,14 @@ r = () => {
       </div>
       <div class="resultDiv_result">
 
-        <span>${valorResult}</span>
+        <p>${valorResult}</p>
 
         <button onclick="reset()">PLAY AGAIN</button>
 
       </div>
       <div class="resultDiv_botPick">
         
-        <span>THE HOUSE PICKED</span>
+        <p>THE HOUSE PICKED</p>
         <div class="picked">
 
            ${valorBotDiv.outerHTML}
@@ -93,18 +89,13 @@ r = () => {
 
 }
 
-// para ver o resultado //
-ver = () => {
-    console.log(score)
-}
-
 // minha escolha //
 mySelect = () => {
 
     for(let i = 0; i < arrayGame.length; i++){
         arrayGame[i].addEventListener('click', () => {
             botGame()
-            
+                      
             valorDiv = arrayGame[i]
             valor = valorDiv.className
             
