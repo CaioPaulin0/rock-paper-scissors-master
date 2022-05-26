@@ -14,6 +14,26 @@ let valorResult;
 let score = 0;
 
 
+
+win = () => {
+    const div = document.createElement('div')
+    div.setAttribute('class', 'win')
+
+    const divResult = document.querySelector('.resultDiv_myPick')
+    const divResultBot = document.querySelector('.resultDiv_botPick')
+
+    if(valorResult == 'YOU WIN'){
+        divResult.appendChild(div)
+    }
+    else if(valorResult == 'YOU LOSE'){
+        divResultBot.appendChild(div)
+    } else{
+        return
+    }
+
+    return
+}
+
 // numero aleatorio do maquia //
 botGame = () => {
 
@@ -29,7 +49,7 @@ result = () => {
     if(valor === 'paper' && valorBot === 'rock' || valor === 'rock' && valorBot === 'scissors' || valor === 'scissors' && valorBot === 'paper'){
       
         valorResult = 'YOU WIN'
-
+                
         score += 1
 
     }
@@ -104,6 +124,7 @@ mySelect = () => {
             scoreId.innerHTML = score;
 
             r()
+            win()
         })
     }
 }
