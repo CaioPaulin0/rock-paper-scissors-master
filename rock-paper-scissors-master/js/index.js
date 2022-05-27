@@ -70,7 +70,7 @@ result = () => {
     
 }
 
-r = () => {
+resultView = () => {
     const container = document.querySelector('.container')
     container.removeChild(game)
     const resultDiv = document.createElement('div')
@@ -123,7 +123,7 @@ mySelect = () => {
 
             scoreId.innerHTML = score;
 
-            r()
+            resultView()
             win()
         })
     }
