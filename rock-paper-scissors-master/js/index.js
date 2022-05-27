@@ -14,7 +14,7 @@ let valorResult;
 let score = 0;
 
 
-
+// efeito de vencedor //
 win = () => {
     const div = document.createElement('div')
     div.setAttribute('class', 'win')
@@ -70,6 +70,7 @@ result = () => {
     
 }
 
+// div geral com os resultados //
 resultView = () => {
     const container = document.querySelector('.container')
     container.removeChild(game)
@@ -131,7 +132,7 @@ mySelect = () => {
 
 mySelect()
 
-// feito //
+// reset completo //
 reset = () => {
     const container = document.querySelector('.container')
     const resultDiv = document.querySelector('.resultDiv')
