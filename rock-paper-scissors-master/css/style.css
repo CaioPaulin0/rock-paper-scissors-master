@@ -89,8 +89,9 @@ body{
 
 .game{
     width: 30rem;
-    height: 600px;
+    height: 450px;
     margin: 0 auto;
+    margin-top: 150px;
     display: flex;
     justify-content: space-between;
     background-image: url('../images/bg-triangle.svg');
@@ -324,7 +325,7 @@ body{
 
 /* mobile */
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 1000px){
 
     .resultDiv{
         width: 100%;
@@ -347,5 +348,11 @@ body{
 
     .win{
         transform: translateY(49px) translateX(-110px);
+    }
+}
+
+@media screen and (max-width: 900px){
+    .container{
+        transform: scale(0.9);
     }
 }
